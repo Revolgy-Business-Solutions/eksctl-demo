@@ -3,7 +3,8 @@ install eksctl https://github.com/weaveworks/eksctl
 
 # provision a cluster and auth
 ```
-eksctl create cluster --name=test-cluster --nodes-min=2 --nodes-max=5 --node-type=m5.large --region=us-east-1  --kubeconfig /Users/you/.kube/config.eks
+eksctl create cluster --name=test-cluster --nodes-min=2 --nodes-max=5 \
+  --node-type=m5.large --region=us-east-1  --kubeconfig /Users/you/.kube/config.eks
 ```
 
 # verify with kubectl
@@ -25,7 +26,8 @@ kubectl create -f storage-class.yaml
 
 # install wordpress
 ```
-helm install --name wordpress stable/wordpress --set mariadb.master.persistence.storageClass=gp2
+helm install --name wordpress stable/wordpress \
+  --set mariadb.master.persistence.storageClass=gp2
 ```
 
 # verify wordpress 
